@@ -7,7 +7,7 @@ def coletar_html_netimoveis():
     url = "https://www.netimoveis.com/venda/minas-gerais/belo-horizonte/apartamento"
          #"https://www.netimoveis.com.br/venda/minas-gerais/belo-horizonte/apartamento"
     
-    # Parâmetros que aparecem após a '?' na sua imagem
+    # Parâmetros que aparecem após a '?' na url do navegador
     params = {
         "tipo": "apartamento",
         "transacao": "venda",
