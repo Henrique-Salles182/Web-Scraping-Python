@@ -53,7 +53,8 @@ def processar_dados_silver():
         # Extraímos apenas o que é relevante para o negócio
         registro = {
             "id": item.get("imovelSan_Id"),
-            "tipo": item.get("tipoImovel"),
+            # Usamos .get() com um valor padrão para evitar 'null' visual no JSON
+            "tipo": item.get("tipoImovel1", "Nao informado"),
             "bairro": item.get("nomeBairro"),
             "cidade": item.get("nomeCidade"),
             "preco": limpar_numero(item.get("valorImovel")),
@@ -61,7 +62,7 @@ def processar_dados_silver():
             "quartos": int(item.get("quartos") or 0),
             "vagas": int(item.get("vagaGaragem") or 0),
             "banheiros": int(item.get("banho") or 0),
-            "url_relativa": item.get("urlItem")
+            "url_relativa": item.get("urlDetalheImovel")
         }
         dados_limpos.append(registro)
 
